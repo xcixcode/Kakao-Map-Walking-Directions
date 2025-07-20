@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>카카오맵 기반 동의대 도보 길찾기</title>
+</head>
+<body>
+
+<h1>카카오맵 기반 동의대 도보 길찾기</h1>
+
+<div>
+  <label for="destinations1">출발지 선택:</label>
+  <select id="destinations1">
+    <option value="대학본부">동의대학교 대학본부</option>
+    <option value="법정관">동의대학교 법정관</option>
+    <option value="상경대학">동의대학교 상경대학</option>
+    <option value="국제관">동의대학교 국제관</option>
+    <option value="동의스포츠센터">동의대학교 동의스포츠센터</option>
+    <option value="상영관">동의대학교 상영관</option>
+    <option value="수덕전">동의대학교 수덕전</option>
+    <option value="제1인문관">동의대학교 제1인문관</option>
+    <option value="제2인문관">동의대학교 제2인문관</option>
+    <option value="효민체육관">동의대학교 효민체육관</option>
+    <option value="중앙도서관">동의대학교 중앙도서관</option>
+    <option value="여대생커리어개발관">동의대학교 여대생커리어개발관</option>
+    <option value="제2효민생활관">동의대학교 제2효민생활관</option>
+    <option value="가야캠퍼스_의료보건관">가야캠퍼스 의료보건관</option>
+    <option value="가야캠퍼스_생활과학관">가야캠퍼스 생활과학관</option>
+    <option value="가야캠퍼스_음악관">가야캠퍼스 음악관</option>
+    <option value="가야캠퍼스_창의관">가야캠퍼스 창의관</option>
+    <option value="평생교육원">동의대학교 평생교육원</option>
+    <option value="가야캠퍼스_산학협력관">가야캠퍼스 산학협력관</option>
+    <option value="건윤관">동의대학교 건윤관</option>
+    <option value="공과대학">동의대학교 공과대학</option>
+    <option value="정보공학관">동의대학교 정보공학관</option>
+    <option value="제1효민생활관">동의대학교 제1효민생활관</option>
+    <option value="학생군사교육단">동의대학교 학생군사교육단</option>
+    <option value="행복기숙사">동의대학교 행복기숙사</option>
+    <option value="효민야구장">동의대학교 효민야구장</option>
+    <option value="효민축구장">동의대학교 효민축구장</option>
+    <option value="효민원">동의대학교 효민원</option>
+    <option value="혜안지">동의대학교 혜안지</option>
+    <option value="정심정">동의대학교 정심정</option>
+    <option value="효민야외음악당">동의대학교 효민야외음악당</option>
+    <option value="정문">동의대학교 정문</option>
+  </select>
+</div>
+
+<div>
+  <label for="destinations2">도착지 선택:</label>
+  <select id="destinations2">
+    <option value="대학본부">동의대학교 대학본부</option>
+    <option value="법정관">동의대학교 법정관</option>
+    <option value="상경대학">동의대학교 상경대학</option>
+    <option value="국제관">동의대학교 국제관</option>
+    <option value="동의스포츠센터">동의대학교 동의스포츠센터</option>
+    <option value="상영관">동의대학교 상영관</option>
+    <option value="수덕전">동의대학교 수덕전</option>
+    <option value="제1인문관">동의대학교 제1인문관</option>
+    <option value="제2인문관">동의대학교 제2인문관</option>
+    <option value="효민체육관">동의대학교 효민체육관</option>
+    <option value="중앙도서관">동의대학교 중앙도서관</option>
+    <option value="여대생커리어개발관">동의대학교 여대생커리어개발관</option>
+    <option value="제2효민생활관">동의대학교 제2효민생활관</option>
+    <option value="가야캠퍼스_의료보건관">가야캠퍼스 의료보건관</option>
+    <option value="가야캠퍼스_생활과학관">가야캠퍼스 생활과학관</option>
+    <option value="가야캠퍼스_음악관">가야캠퍼스 음악관</option>
+    <option value="가야캠퍼스_창의관">가야캠퍼스 창의관</option>
+    <option value="평생교육원">동의대학교 평생교육원</option>
+    <option value="가야캠퍼스_산학협력관">가야캠퍼스 산학협력관</option>
+    <option value="건윤관">동의대학교 건윤관</option>
+    <option value="공과대학">동의대학교 공과대학</option>
+    <option value="정보공학관">동의대학교 정보공학관</option>
+    <option value="제1효민생활관">동의대학교 제1효민생활관</option>
+    <option value="학생군사교육단">동의대학교 학생군사교육단</option>
+    <option value="행복기숙사">동의대학교 행복기숙사</option>
+    <option value="효민야구장">동의대학교 효민야구장</option>
+    <option value="효민축구장">동의대학교 효민축구장</option>
+    <option value="효민원">동의대학교 효민원</option>
+    <option value="혜안지">동의대학교 혜안지</option>
+    <option value="정심정">동의대학교 정심정</option>
+    <option value="효민야외음악당">동의대학교 효민야외음악당</option>
+    <option value="정문">동의대학교 정문</option>
+  </select>
+</div>
+
+<div>
+  <button onclick="findRoute()">경로 찾기</button>
+</div>
+
+<script>
+function findRoute() {
+  var start = document.getElementById("destinations1").value;
+  var end = document.getElementById("destinations2").value;
+
+  if (start === end) {
+    alert("출발지와 도착지는 다르게 선택해주세요.");
+    return;
+  }
+
+  const startCoords = getCoordinates(start);
+  const endCoords = getCoordinates(end);
+  const placeId = getPlaceID(end);
+
+  const url = `https://map.kakao.com/?map_type=TYPE_MAP&target=walk&rt=${startCoords},${endCoords}&rt1=동의대학교+${start}&rt2=동의대학교+${end}&rtIds=,${placeId}`;
+
+  window.location.href = url;
+}
+
+function getCoordinates(name) {
+  const coords = {
+    "대학본부": "963341,461166",
+    "법정관": "963501,461145",
+    "상경대학": "963175,461203",
+    "국제관": "963038,461530",
+    "동의스포츠센터": "963541,461318",
+    "상영관": "963489,461530",
+    "수덕전": "963578,461749",
+    "제1인문관": "963725,461599",
+    "제2인문관": "963782,461785",
+    "효민체육관": "963892,462026",
+    "중앙도서관": "963639,462005",
+    "여대생커리어개발관": "963346,461951",
+    "제2효민생활관": "963141,462149",
+    "가야캠퍼스_의료보건관": "963282,462107",
+    "가야캠퍼스_생활과학관": "963328,462329",
+    "가야캠퍼스_음악관": "963384,462557",
+    "가야캠퍼스_창의관": "963718,462335",
+    "평생교육원": "963656,462468",
+    "가야캠퍼스_산학협력관": "963819,462590",
+    "건윤관": "963844,462805",
+    "공과대학": "963944,462525",
+    "정보공학관": "963996,462916",
+    "제1효민생활관": "964359,462368",
+    "학생군사교육단": "964086,461928",
+    "행복기숙사": "963337,461846",
+    "효민야구장": "963278,460937",
+    "효민축구장": "964247,462076",
+    "효민원": "963305,461414",
+    "혜안지": "963318,461587",
+    "정심정": "963573,461431",
+    "효민야외음악당": "963214,461858",
+    "정문": "963482,462825"
+  };
+  return coords[name] || "";
+}
+
+function getPlaceID(name) {
+  const ids = {
+    "대학본부": "17567947",
+    "법정관": "443993613",
+    "상경대학": "17555572",
+    "국제관": "17567948",
+    "동의스포츠센터": "17564059",
+    "상영관": "17562178",
+    "수덕전": "17555583",
+    "제1인문관": "17567937",
+    "제2인문관": "17555663",
+    "효민체육관": "17555581",
+    "중앙도서관": "17806811",
+    "여대생커리어개발관": "17562232",
+    "제2효민생활관": "17566019",
+    "가야캠퍼스_의료보건관": "1225814339",
+    "가야캠퍼스_생활과학관": "1410626926",
+    "가야캠퍼스_음악관": "1818343773",
+    "가야캠퍼스_창의관": "2039104218",
+    "평생교육원": "698310131",
+    "가야캠퍼스_산학협력관": "1994398144",
+    "건윤관": "17564048",
+    "공과대학": "11327797",
+    "정보공학관": "17561330",
+    "제1효민생활관": "14921059",
+    "학생군사교육단": "17562177",
+    "행복기숙사": "27389111",
+    "효민야구장": "17568468",
+    "효민축구장": "26962375",
+    "효민원": "17564976",
+    "혜안지": "17565982",
+    "정심정": "17806843",
+    "효민야외음악당": "17555690",
+    "정문": "1567679508"
+  };
+  return ids[name] || "";
+}
+</script>
+
+</body>
+</html>
