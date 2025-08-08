@@ -25,10 +25,22 @@
 
 ## 🚀 실행 방법
 
+### 바로 실행 (GitHub Pages)
+
+https://xcixcode.github.io/Kakao-Map-Walking-Directions/
+
+### 로컬에서 실행
+
 1. 파일을 다운로드하거나 복사합니다.  
 2. `index.html` 파일을 웹 브라우저에서 엽니다.  
 3. 출발지와 도착지를 선택하고 **"경로 찾기"** 버튼을 클릭합니다.  
 4. 카카오맵으로 이동하여 도보 경로를 확인할 수 있습니다.  
+
+```bash
+git clone https://github.com/xcixcode/Kakao-Map-Walking-Directions.git
+cd Kakao-Map-Walking-Directions
+open index.html  # 또는 브라우저에서 직접 파일 열기
+```
 
 ---
 
