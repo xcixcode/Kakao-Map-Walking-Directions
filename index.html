@@ -1,115 +1,118 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>카카오맵 기반 동의대 도보 길찾기</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>카카오맵 기반 동의대 도보 길찾기</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f9;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+    }
+    * {
+        box-sizing: border-box;
+    }
+    .container {
+        background-color: #fff;
+        border-radius: 8px;
+        padding: 20px;
+        max-width: 400px;
+        width: 100%;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    h1 {
+        text-align: center;
+        color: #333;
+        margin-bottom: 30px;
+    }
+    .form-group {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 20px;
+    }
+    label {
+        font-weight: bold;
+        margin-bottom: 5px;
+        color: #444;
+    }
+    select {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+    }
+    select:focus {
+        border-color: #4CAF50;
+        outline: none;
+        box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+    }
+    .button-row {
+        display: flex;
+        gap: 10px;
+        margin: 10px 0 20px;
+    }
+    .button-row button {
+        flex: 1;
+    }
+    button {
+        padding: 10px;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 14px;
+        font-weight: bold;
+        transition: background-color 0.2s ease;
+    }
+    button:hover {
+        background-color: #45a049;
+    }
+    button.delete-btn {
+        background-color: #f44336;
+    }
+    button.delete-btn:hover {
+        background-color: #d32f2f;
+    }
+    .main-btn {
+        width: 100%;
+        font-size: 16px;
+    }
+</style>
 </head>
 <body>
 
-<h1>카카오맵 기반 동의대 도보 길찾기</h1>
+<div class="container">
+    <h1>동의대 도보 길찾기</h1>
 
-<div>
-  <label for="destinations1">출발지 선택:</label>
-  <select id="destinations1">
-    <option value="대학본부">동의대학교 대학본부</option>
-    <option value="법정관">동의대학교 법정관</option>
-    <option value="상경대학">동의대학교 상경대학</option>
-    <option value="국제관">동의대학교 국제관</option>
-    <option value="동의스포츠센터">동의대학교 동의스포츠센터</option>
-    <option value="상영관">동의대학교 상영관</option>
-    <option value="수덕전">동의대학교 수덕전</option>
-    <option value="제1인문관">동의대학교 제1인문관</option>
-    <option value="제2인문관">동의대학교 제2인문관</option>
-    <option value="효민체육관">동의대학교 효민체육관</option>
-    <option value="중앙도서관">동의대학교 중앙도서관</option>
-    <option value="여대생커리어개발관">동의대학교 여대생커리어개발관</option>
-    <option value="제2효민생활관">동의대학교 제2효민생활관</option>
-    <option value="가야캠퍼스_의료보건관">가야캠퍼스 의료보건관</option>
-    <option value="가야캠퍼스_생활과학관">가야캠퍼스 생활과학관</option>
-    <option value="가야캠퍼스_음악관">가야캠퍼스 음악관</option>
-    <option value="가야캠퍼스_창의관">가야캠퍼스 창의관</option>
-    <option value="평생교육원">동의대학교 평생교육원</option>
-    <option value="가야캠퍼스_산학협력관">가야캠퍼스 산학협력관</option>
-    <option value="건윤관">동의대학교 건윤관</option>
-    <option value="공과대학">동의대학교 공과대학</option>
-    <option value="정보공학관">동의대학교 정보공학관</option>
-    <option value="제1효민생활관">동의대학교 제1효민생활관</option>
-    <option value="학생군사교육단">동의대학교 학생군사교육단</option>
-    <option value="행복기숙사">동의대학교 행복기숙사</option>
-    <option value="효민야구장">동의대학교 효민야구장</option>
-    <option value="효민축구장">동의대학교 효민축구장</option>
-    <option value="효민원">동의대학교 효민원</option>
-    <option value="혜안지">동의대학교 혜안지</option>
-    <option value="정심정">동의대학교 정심정</option>
-    <option value="효민야외음악당">동의대학교 효민야외음악당</option>
-    <option value="정문">동의대학교 정문</option>
-  </select>
-</div>
+    <!-- 출발지 -->
+    <div class="form-group">
+        <label for="start">출발지</label>
+        <select id="start"></select>
+    </div>
 
-<div>
-  <label for="destinations2">도착지 선택:</label>
-  <select id="destinations2">
-    <option value="대학본부">동의대학교 대학본부</option>
-    <option value="법정관">동의대학교 법정관</option>
-    <option value="상경대학">동의대학교 상경대학</option>
-    <option value="국제관">동의대학교 국제관</option>
-    <option value="동의스포츠센터">동의대학교 동의스포츠센터</option>
-    <option value="상영관">동의대학교 상영관</option>
-    <option value="수덕전">동의대학교 수덕전</option>
-    <option value="제1인문관">동의대학교 제1인문관</option>
-    <option value="제2인문관">동의대학교 제2인문관</option>
-    <option value="효민체육관">동의대학교 효민체육관</option>
-    <option value="중앙도서관">동의대학교 중앙도서관</option>
-    <option value="여대생커리어개발관">동의대학교 여대생커리어개발관</option>
-    <option value="제2효민생활관">동의대학교 제2효민생활관</option>
-    <option value="가야캠퍼스_의료보건관">가야캠퍼스 의료보건관</option>
-    <option value="가야캠퍼스_생활과학관">가야캠퍼스 생활과학관</option>
-    <option value="가야캠퍼스_음악관">가야캠퍼스 음악관</option>
-    <option value="가야캠퍼스_창의관">가야캠퍼스 창의관</option>
-    <option value="평생교육원">동의대학교 평생교육원</option>
-    <option value="가야캠퍼스_산학협력관">가야캠퍼스 산학협력관</option>
-    <option value="건윤관">동의대학교 건윤관</option>
-    <option value="공과대학">동의대학교 공과대학</option>
-    <option value="정보공학관">동의대학교 정보공학관</option>
-    <option value="제1효민생활관">동의대학교 제1효민생활관</option>
-    <option value="학생군사교육단">동의대학교 학생군사교육단</option>
-    <option value="행복기숙사">동의대학교 행복기숙사</option>
-    <option value="효민야구장">동의대학교 효민야구장</option>
-    <option value="효민축구장">동의대학교 효민축구장</option>
-    <option value="효민원">동의대학교 효민원</option>
-    <option value="혜안지">동의대학교 혜안지</option>
-    <option value="정심정">동의대학교 정심정</option>
-    <option value="효민야외음악당">동의대학교 효민야외음악당</option>
-    <option value="정문">동의대학교 정문</option>
-  </select>
-</div>
+    <!-- 버튼 두 개 -->
+    <div class="button-row">
+        <button onclick="swapPoints()">출발/도착 바꾸기</button>
+        <button class="delete-btn" onclick="clearSelection()">모두 지우기</button>
+    </div>
 
-<div>
-  <button onclick="findRoute()">경로 찾기</button>
+    <!-- 도착지 -->
+    <div class="form-group">
+        <label for="end">도착지</label>
+        <select id="end"></select>
+    </div>
+
+    <button class="main-btn" onclick="findRoute()">경로 찾기</button>
 </div>
 
 <script>
-function findRoute() {
-  var start = document.getElementById("destinations1").value;
-  var end = document.getElementById("destinations2").value;
-
-  if (start === end) {
-    alert("출발지와 도착지는 다르게 선택해주세요.");
-    return;
-  }
-
-  const startCoords = getCoordinates(start);
-  const endCoords = getCoordinates(end);
-  const placeId = getPlaceID(end);
-
-  const url = `https://map.kakao.com/?map_type=TYPE_MAP&target=walk&rt=${startCoords},${endCoords}&rt1=동의대학교+${start}&rt2=동의대학교+${end}&rtIds=,${placeId}`;
-
-  window.location.href = url;
-}
-
-function getCoordinates(name) {
-  const coords = {
+const coords = {
     "대학본부": "963341,461166",
     "법정관": "963501,461145",
     "상경대학": "963175,461203",
@@ -142,12 +145,9 @@ function getCoordinates(name) {
     "정심정": "963573,461431",
     "효민야외음악당": "963214,461858",
     "정문": "963482,462825"
-  };
-  return coords[name] || "";
-}
+};
 
-function getPlaceID(name) {
-  const ids = {
+const placeIds = {
     "대학본부": "17567947",
     "법정관": "443993613",
     "상경대학": "17555572",
@@ -180,8 +180,61 @@ function getPlaceID(name) {
     "정심정": "17806843",
     "효민야외음악당": "17555690",
     "정문": "1567679508"
-  };
-  return ids[name] || "";
+};
+
+const startSelect = document.getElementById('start');
+const endSelect = document.getElementById('end');
+
+function populateSelects() {
+    startSelect.innerHTML = '<option value="">출발지를 선택하세요</option>';
+    endSelect.innerHTML = '<option value="">도착지를 선택하세요</option>';
+
+    for (const name in coords) {
+        let opt1 = document.createElement('option');
+        opt1.value = name;
+        opt1.textContent = "동의대학교 " + name;
+        startSelect.appendChild(opt1);
+
+        let opt2 = document.createElement('option');
+        opt2.value = name;
+        opt2.textContent = "동의대학교 " + name;
+        endSelect.appendChild(opt2);
+    }
+}
+
+populateSelects();
+
+function findRoute() {
+    const start = startSelect.value;
+    const end = endSelect.value;
+
+    if (!start || !end) {
+        alert("출발지와 도착지를 모두 선택하세요.");
+        return;
+    }
+    if (start === end) {
+        alert("출발지와 도착지는 다르게 선택해주세요.");
+        return;
+    }
+
+    const url = `https://map.kakao.com/?map_type=TYPE_MAP&target=walk` +
+                `&rt=${coords[start]},${coords[end]}` +
+                `&rt1=동의대학교+${encodeURIComponent(start)}` +
+                `&rt2=동의대학교+${encodeURIComponent(end)}` +
+                `&rtIds=,${placeIds[end]}`;
+
+    window.open(url, "_blank");
+}
+
+function swapPoints() {
+    const temp = startSelect.value;
+    startSelect.value = endSelect.value;
+    endSelect.value = temp;
+}
+
+function clearSelection() {
+    startSelect.value = "";
+    endSelect.value = "";
 }
 </script>
 
