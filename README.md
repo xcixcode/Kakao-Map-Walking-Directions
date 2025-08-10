@@ -18,8 +18,10 @@
 
 ## 📁 프로젝트 구성
 
-- `index.html` : 웹 페이지 메인 파일  
-- `README.md` : 설명 문서
+- `index.html` : 웹 페이지 메인 파일 (HTML 구조 및 외부 CSS/JS 연결)
+- `styles.css` : 스타일시트 파일 (페이지 디자인 및 레이아웃)
+- `script.js` : 자바스크립트 파일 (길찾기 기능, UI 상호작용)
+- `README.md` : 프로젝트 설명 문서
 
 ---
 
