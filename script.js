@@ -109,7 +109,7 @@ function findRoute() {
                 `&rt2=동의대학교+${encodeURIComponent(end)}` +
                 `&rtIds=,${placeIds[end]}`;
 
-    window.open(url, "_blank");
+    window.open(url, "_blank", "noopener,noreferrer");
 }
 
 function swapPoints() {
