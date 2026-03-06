@@ -103,13 +103,13 @@ function findRoute() {
         return;
     }
 
-    const url = `https://m.map.kakao.com/?map_type=TYPE_MAP&target=walk` +
+    const url = `https://map.kakao.com/?map_type=TYPE_MAP&target=walk` +
                 `&rt=${coords[start]},${coords[end]}` +
                 `&rt1=동의대학교+${encodeURIComponent(start)}` +
                 `&rt2=동의대학교+${encodeURIComponent(end)}` +
                 `&rtIds=,${placeIds[end]}`;
 
-    window.open(url, "_blank", "noopener,noreferrer");
+    window.open(url, "_blank");
 }
 
 function swapPoints() {
