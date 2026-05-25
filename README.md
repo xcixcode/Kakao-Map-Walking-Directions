@@ -56,4 +56,3 @@ https://xcixcode.github.io/Kakao-Map-Walking-Directions/
 > ⚠️ 참고
 > 
 > * 본 프로젝트는 **카카오맵의 웹 링크 기능**을 이용하며, **카카오 API를 직접 사용하지 않습니다.**
-> * 카카오맵의 모든 저작권은 카카오(Kakao Corp.)에 귀속됩니다.
